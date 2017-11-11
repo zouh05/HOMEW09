@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Jie(num){
+            var ji=1;
+            for(var i =1;i<=num;i++){
+                ji*=i;
+            }
+            return ji;
+        }
+        var sumJie =0;
+        var a,b,c,i;
+        for (var i=100;i<=999;i++){
+            a=i%10;//取i得个位数
+            b=i/10%10;//取i得十位数
+            c=i/100;
+        if(i==Jie(a)+Jie(b)+Jie(c)){
+             console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
