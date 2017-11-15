@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一题
+        // var aa=prompt("请输入一个数：");
+        // var reg =/^-?\d*\.?\d*$/g;
+        // if(reg.test(aa)){
+        //     alert("输入正确");
+        // } else{
+        //     alert("错误");
+        // }
+        // 第二题
+        // var phoneInput =prompt("请输入一个本地电话号：");
+        // var reg =/^0\d{2,3}-\d{8}$/g;
+        // if(reg.test(phoneInput)){
+        //     alert("成功");
+        // }else{
+        //     alert("失败");
+        // }
+        // 第三题
+        // var wZ =prompt("请输入一个网址");
+        // var str ='www.ucai.com';
+        // console.log(str.replace(/wZ/,function(){
+        //      return "www.ucai.com";
+        // }));
+        // 第四题
+        // function trim(str){
+        //     var reg =/^\s/g;
+        //     str =str.replace(reg,"");//用空白替代空格
+        //     console.log(str);
+        // }
+        // trim(prompt("请输入你想输入的："));
+        // 第五题
+        // var reg = /^<.+>.+<.+>$/;
+        // var str = "<p class='demo'>hello ucai</p>".replace(/^<.+>(.+)<.+>$/,function(match,$1){
+        //     return $1;
+        // })
+        // console.log(str);
+        // 勾股定理作业
+        // for(var i = 1;i <= 100; i++){
+        //     for(var j = 1;j <= 100; j++){
+        //         var xpSum =i *i + j * j;
+        //         var x = Math.sqrt(xpSum);
+        //         if(x === parseInt(x) && x <=100){
+        //             if(i < j){
+        //                 console.log("两条直角边分别是"+i+"和"+j+"斜边是"+x);
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 作业跳楼题
+        function maxSame(str1,str2){
+            var maxLength = 0;
+            var maxStr = "";
+            var ziStr;//存放str2中的所有子串
+            // 用两层循环来确定所有取到str2子字符串的起始和终止位置
+            for(var start = 0;start <=str2.length;start++){
+                for(var end = start+1;end <= str2.length;end++){
+                    ziStr = str2.substring(start,end);//取所有子串
+                    // 判断str2中的所有子串在str1中是否存在，若存在则判断是否是最长的，同时满足的话
+                    if(str1.indexOf(ziStr) !== -1 && ziStr.length >maxLength){
+                        maxLength =ziStr.length;
+                        maxStr = ziStr;
+                    }
+                }
+            }
+            return maxStr;
+        }
+        console.log(maxSame("abcdefghijklmn","mndefghlmhijklmn"));
+    </script>
+</body>
+</html>
