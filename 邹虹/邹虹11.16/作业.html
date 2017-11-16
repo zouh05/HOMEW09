@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       header{
+           width: 400px;height: 400px;
+           margin:200px auto;
+           overflow:hidden;
+           position:relative;
+           border:2px solid #000;
+       }
+       section{
+           width: 1200px;height:400px;
+           position:absolute;top:0;left:0;
+       }
+       img{
+           float:left;
+       }
+       div{
+        width: 20px;height:20px;
+        border-top:4px solid #000;
+        border-left:4px solid #000;
+        cursor: pointer;
+       }
+       .left{
+        transform: rotate(-45deg);
+		position:absolute ;
+        top:200px;left:10px;
+       }
+       .right{
+        transform: rotate(135deg);
+		position:absolute ;
+        top:200px;right:10px;
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <section>
+            <img src="images/1.jpg"width="400";height="400"/>
+            <img src="images/2.jpg" width="400";height="400"/>
+            <img src="images/3.jpg" width="400";height="400"/>
+        </section>
+        <div class="left"></div>
+        <div class="right"></div>
+    </header>
+    <script>
+        var oSec = document.querySelector("section");
+        var oDiv = document.querySelectorAll("div");
+        var l = 0;
+        oDiv[0].onclick = function () {
+            l -= 400;
+            if (l < -400*2) {
+                l = 0 ;
+            }
+            oSec.style.left = l + "px";
+        }
+        oDiv[1].onclick = function () {
+            l += 400;
+            if (l > 0) {
+                l = -400*2 ;
+            }
+            oSec.style.left = l + "px";
+        }
+    </script>
+</body>
+</html>
