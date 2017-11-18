@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			td{
+				width: 150px; height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0">			
+			<tr><td>0</td><td></td><td></td><td></td></tr>
+			<tr><td>1</td><td></td><td></td><td></td></tr>
+			<tr><td>2</td><td></td><td></td><td></td></tr>
+			<tr><td>3</td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td></tr>
+		</table>
+		<button>点击</button>
+	</body>
+	<script type="text/javascript">
+		var oTr =document.querySelectorAll("tr");
+		var oBtn =document.querySelector("button");
+		for(var i = 0;i<oTr.length; i +=2){
+			oTr[i].style.backgroundColor="red";
+		}
+		oBtn.onclick=function(){
+			for(var j= 0; j<oTr.length;j++){
+				oTr[j].style.backgroundColor="";
+			}
+			for(var n = 1;n<oTr.length; n +=2){
+				oTr[n].style.backgroundColor="red";
+			}
+		}
+	</script>
+</html>
